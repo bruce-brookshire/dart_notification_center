@@ -1,8 +1,9 @@
+
 /// Support for doing something awesome.
 ///
 /// More dartdocs go here.
-library FlutterNotificationCenter;
+library flutter_notification_center;
 
-export 'src/FlutterNotificationCenter_base.dart';
+export 'src/flutter_notification_center_base.dart';
 
 // TODO: Export any libraries intended for clients of this package.

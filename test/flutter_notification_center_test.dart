@@ -1,4 +1,4 @@
-import 'package:FlutterNotificationCenter/FlutterNotificationCenter.dart';
+import 'package:flutter_notification_center/flutter_notification_center.dart';
 import 'package:test/test.dart';
 
 void main() {
