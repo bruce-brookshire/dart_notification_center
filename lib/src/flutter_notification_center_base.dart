@@ -12,7 +12,9 @@ class FlutterNotificationCenter {
   Map<String, Map<dynamic, ObserverCallback>> _channelObservers = {};
 
   /// The singleton instance for the Notification Center.
-  static FlutterNotificationCenter _sharedCenter = FlutterNotificationCenter();
+  static FlutterNotificationCenter _sharedCenter = FlutterNotificationCenter._();
+
+  FlutterNotificationCenter._();
 
   ///
   /// Create a notification channel for posting and subscribing.
