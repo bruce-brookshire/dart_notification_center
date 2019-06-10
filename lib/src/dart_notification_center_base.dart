@@ -7,14 +7,14 @@ typedef void ObserverCallback(dynamic options);
 /// An observer pattern oriented tool to facilitate cross application
 /// communication. When an observer is subscribed to an channel, its callback
 /// is notified with available options when a notification is posted.
-class FlutterNotificationCenter {
+class DartNotificationCenter {
   /// The map of channels to subscribed observers.
   Map<String, Map<dynamic, ObserverCallback>> _channelObservers = {};
 
   /// The singleton instance for the Notification Center.
-  static FlutterNotificationCenter _sharedCenter = FlutterNotificationCenter._();
+  static DartNotificationCenter _sharedCenter = DartNotificationCenter._();
 
-  FlutterNotificationCenter._();
+  DartNotificationCenter._();
 
   ///
   /// Create a notification channel for posting and subscribing.
