@@ -1,14 +1,14 @@
-A lightweight and intuitive observer pattern manager for Dart/Flutter
+A lightweight and intuitive observer pattern manager for Dart/Flutter in the style of the iOS Notification Center
 
 ## License
 Published under a BSD-style [license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
 
 ## Installation
-To use this plugin, add `flutter_notification_center` as a dependency in your pubspec.yaml file.
+To use this plugin, add `dart_notification_center` as a dependency in your pubspec.yaml file.
 
 Import the package using:
 ```dart
-import 'package:flutter_notification_center/flutter_notification_center.dart';
+import 'package:dart_notification_center/dart_notification_center.dart';
 ```
 
 
