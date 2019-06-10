@@ -6,3 +6,11 @@
 
 - Implemented version, functional.
 - Needs testing
+
+## 0.1.1
+
+- Knock down version requirement for test
+
+## 0.1.2
+
+- Much better. Should integrate well now

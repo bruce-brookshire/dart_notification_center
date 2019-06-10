@@ -1,6 +1,6 @@
 name: dart_notification_center
 description: A wrapper for the observer pattern for Dart in the style of the iOS Notification Center.
-version: 0.1.0
+version: 0.1.2
 homepage: https://github.com/flyrboy96
 author: Bruce Brookshire <bruce.t.brookshire@gmail.com>
 
@@ -8,7 +8,7 @@ environment:
   sdk: '>=2.2.0 <3.0.0'
 
 dependencies:
-  meta: ^1.1.7
+  meta: ^1.1.6
 
 dev_dependencies:
   pedantic: ^1.0.0
