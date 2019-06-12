@@ -1,4 +1,5 @@
 import 'package:meta/meta.dart';
+import 'dart:isolate';
 
 /// The type of callback that is called when a notification is
 /// posted to a channel
@@ -67,6 +68,8 @@ class DartNotificationCenter {
       _sharedCenter._channelObservers[channel][observer] == null,
       'Observer is already subscribed to the channel $channel',
     );
+
+    _sharedCenter._channelObservers[channel][observer] = onNotification;
   }
 
   ///
@@ -110,9 +113,8 @@ class DartNotificationCenter {
       _sharedCenter._channelObservers[channel] != null,
       'Channel: $channel does not exist',
     );
-
     _sharedCenter._channelObservers[channel].values.forEach(
-      (callback) => callback(options),
+      (callback) => Future(() => callback(options)),
     );
   }
 }

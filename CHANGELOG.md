@@ -14,3 +14,12 @@
 ## 0.1.2
 
 - Much better. Should integrate well now
+
+## 0.1.3
+
+- Fixed the subscription method, subscriptions should listen properly now
+
+
+## 0.2.0
+
+- Callbacks are now handled asynchronously to improve performance
