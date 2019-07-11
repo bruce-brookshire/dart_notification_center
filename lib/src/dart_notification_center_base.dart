@@ -1,5 +1,4 @@
 import 'package:meta/meta.dart';
-import 'dart:isolate';
 
 /// The type of callback that is called when a notification is
 /// posted to a channel
@@ -106,15 +105,11 @@ class DartNotificationCenter {
   /// get notified via their callbacks. If options are supplied, they will be sent
   /// to the callback.
   ///
-  /// Throws if the [channel] does not exist.
-  ///
   static void post({@required String channel, dynamic options}) {
-    assert(
-      _sharedCenter._channelObservers[channel] != null,
-      'Channel: $channel does not exist',
-    );
-    _sharedCenter._channelObservers[channel].values.forEach(
-      (callback) => Future(() => callback(options)),
-    );
+    if (_sharedCenter._channelObservers[channel] != null) {
+      _sharedCenter._channelObservers[channel].values.forEach(
+        (callback) => Future(() => callback(options)),
+      );
+    }
   }
 }

@@ -23,3 +23,9 @@
 ## 0.2.0
 
 - Callbacks are now handled asynchronously to improve performance
+
+## 1.0.0
+
+- Some general package improvements. 
+- Removed an assertion on posting that was unnecessary, if not counterproductive.
+- Stable for first full version

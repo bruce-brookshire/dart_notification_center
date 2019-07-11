@@ -1,7 +1,6 @@
-A lightweight and intuitive observer pattern manager for Dart/Flutter in the style of the iOS Notification Center
+![Pub](https://img.shields.io/pub/v/dropdown_banner.svg?style=flat-square)
 
-## License
-Published under a BSD-style [license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+A lightweight and intuitive observer pattern manager for Dart/Flutter in the style of the iOS Notification Center
 
 ## Installation
 To use this plugin, add `dart_notification_center` as a dependency in your pubspec.yaml file.
