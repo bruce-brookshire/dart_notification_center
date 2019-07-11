@@ -1,4 +1,4 @@
-![Pub](https://img.shields.io/pub/v/dropdown_banner.svg?style=flat-square)
+![Pub](https://img.shields.io/pub/v/dart_notification_center.svg?style=popout)
 
 A lightweight and intuitive observer pattern manager for Dart/Flutter in the style of the iOS Notification Center
 

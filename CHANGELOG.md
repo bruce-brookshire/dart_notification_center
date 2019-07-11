@@ -29,3 +29,7 @@
 - Some general package improvements. 
 - Removed an assertion on posting that was unnecessary, if not counterproductive.
 - Stable for first full version
+
+## 1.0.0+1
+
+- Fixed the badge to refer to the correct package.
