@@ -1,13 +1,13 @@
 import 'package:dart_notification_center/dart_notification_center.dart';
 
-main() {
+void main() {
   DartNotificationCenter.registerChannel(channel: 'an_event');
 
   //this is our notification observer object
-  int i = 1;
+  var i = 1;
 
   //This is our channel name
-  String CHANNEL_NAME = 'an_event';
+  var CHANNEL_NAME = 'an_event';
 
   DartNotificationCenter.subscribe(
     channel: CHANNEL_NAME,
