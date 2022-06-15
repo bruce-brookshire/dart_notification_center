@@ -1,3 +1,4 @@
+// ignore: unused_import
 import 'package:dart_notification_center/dart_notification_center.dart';
 import 'package:test/test.dart';
 
