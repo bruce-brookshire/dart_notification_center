@@ -1,18 +1,17 @@
-import 'package:meta/meta.dart';
-
 /// The type of callback that is called when a notification is
 /// posted to a channel
-typedef void ObserverCallback(dynamic options);
+typedef ObserverCallback = void Function(dynamic options);
 
 /// An observer pattern oriented tool to facilitate cross application
 /// communication. When an observer is subscribed to an channel, its callback
 /// is notified with available options when a notification is posted.
 class DartNotificationCenter {
   /// The map of channels to subscribed observers.
-  Map<String, Map<dynamic, ObserverCallback>> _channelObservers = {};
+  final Map<String, Map<dynamic, ObserverCallback>> _channelObservers = {};
 
   /// The singleton instance for the Notification Center.
-  static DartNotificationCenter _sharedCenter = DartNotificationCenter._();
+  static final DartNotificationCenter _sharedCenter =
+      DartNotificationCenter._();
 
   DartNotificationCenter._();
 
@@ -82,8 +81,7 @@ class DartNotificationCenter {
   ///
   static void unsubscribe({String? channel, required observer}) {
     if (channel == null) {
-      for (final Map<dynamic, ObserverCallback> observers
-          in _sharedCenter._channelObservers.values) {
+      for (final observers in _sharedCenter._channelObservers.values) {
         observers.remove(observer);
       }
     } else {
