@@ -22,7 +22,7 @@ class DartNotificationCenter {
   /// This is particularly useful for when a [channel] intends on posting
   /// but is unsure if there are any observers already subscribed.
   ///
-  static void registerChannel({@required String channel}) {
+  static void registerChannel({required String channel}) {
     if (_sharedCenter._channelObservers[channel] == null) {
       _sharedCenter._channelObservers[channel] = {};
     }
@@ -36,7 +36,7 @@ class DartNotificationCenter {
   ///
   /// Throws if the [channel] does not exist.
   ///
-  static void unregisterChannel({@required String channel}) {
+  static void unregisterChannel({required String channel}) {
     assert(
       _sharedCenter._channelObservers[channel] != null,
       'Channel: $channel does not exist',
@@ -55,20 +55,20 @@ class DartNotificationCenter {
   /// Throws if the [observer] is already subscribed to the [channel].
   ///
   static void subscribe({
-    @required String channel,
-    @required dynamic observer,
-    @required ObserverCallback onNotification,
+    required String channel,
+    required dynamic observer,
+    required ObserverCallback onNotification,
   }) {
     if (_sharedCenter._channelObservers[channel] == null) {
       _sharedCenter._channelObservers[channel] = {};
     }
 
     assert(
-      _sharedCenter._channelObservers[channel][observer] == null,
+      _sharedCenter._channelObservers[channel]![observer] == null,
       'Observer is already subscribed to the channel $channel',
     );
 
-    _sharedCenter._channelObservers[channel][observer] = onNotification;
+    _sharedCenter._channelObservers[channel]![observer] = onNotification;
   }
 
   ///
@@ -80,7 +80,7 @@ class DartNotificationCenter {
   ///
   /// Throws if the [observer] is not subscribed to the [channel].
   ///
-  static void unsubscribe({String channel, @required observer}) {
+  static void unsubscribe({String? channel, required observer}) {
     if (channel == null) {
       for (final Map<dynamic, ObserverCallback> observers
           in _sharedCenter._channelObservers.values) {
@@ -89,11 +89,11 @@ class DartNotificationCenter {
     } else {
       if (_sharedCenter._channelObservers[channel] != null) {
         assert(
-          _sharedCenter._channelObservers[channel][observer] != null,
+          _sharedCenter._channelObservers[channel]![observer] != null,
           'Observer is not subscribed to $channel',
         );
 
-        _sharedCenter._channelObservers[channel].remove(observer);
+        _sharedCenter._channelObservers[channel]!.remove(observer);
       }
     }
   }
@@ -105,9 +105,9 @@ class DartNotificationCenter {
   /// get notified via their callbacks. If options are supplied, they will be sent
   /// to the callback.
   ///
-  static void post({@required String channel, dynamic options}) {
+  static void post({required String channel, dynamic options}) {
     if (_sharedCenter._channelObservers[channel] != null) {
-      _sharedCenter._channelObservers[channel].values.forEach(
+      _sharedCenter._channelObservers[channel]!.values.forEach(
         (callback) => Future(() => callback(options)),
       );
     }
